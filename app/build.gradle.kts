@@ -1,3 +1,5 @@
+import org.codehaus.groovy.runtime.ArrayTypeUtils.dimension
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -38,7 +40,20 @@ android {
         jvmTarget = "17"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
+    }
+    flavorDimensions += "travelMode" // Grouping of flavors
+
+    productFlavors {
+        create("domestic") {
+            dimension = "travelMode"
+            buildConfigField("boolean", "IS_INTERNATIONAL", "false")
+        }
+        create("international") {
+            dimension = "travelMode"
+            buildConfigField("boolean", "IS_INTERNATIONAL", "true")
+        }
     }
 }
 
