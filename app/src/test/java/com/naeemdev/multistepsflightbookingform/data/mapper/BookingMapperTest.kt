@@ -1,8 +1,8 @@
 package com.naeemdev.multistepsflightbookingform.data.mapper
 
+import com.naeemdev.multistepsflightbookingform.data.local.entity.BookingEntity
 import com.naeemdev.multistepsflightbookingform.data.mapper.BookingMapper.mapToDomain
 import com.naeemdev.multistepsflightbookingform.data.mapper.BookingMapper.mapToEntry
-import com.naeemdev.multistepsflightbookingform.data.remote.local.entity.BookingEntity
 import com.naeemdev.multistepsflightbookingform.domain.model.resquest.SaveBookingRequest
 import kotlin.test.Test
 import kotlin.test.assertEquals

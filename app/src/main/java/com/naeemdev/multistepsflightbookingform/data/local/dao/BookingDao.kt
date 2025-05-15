@@ -1,10 +1,10 @@
-package com.naeemdev.multistepsflightbookingform.data.remote.local.dao
+package com.naeemdev.multistepsflightbookingform.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.naeemdev.multistepsflightbookingform.data.remote.local.entity.BookingEntity
+import com.naeemdev.multistepsflightbookingform.data.local.entity.BookingEntity
 
 @Dao
 interface BookingDao {

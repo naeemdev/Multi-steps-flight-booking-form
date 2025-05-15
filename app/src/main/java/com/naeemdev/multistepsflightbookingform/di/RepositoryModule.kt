@@ -1,6 +1,6 @@
 package com.naeemdev.multistepsflightbookingform.di
 
-import com.naeemdev.multistepsflightbookingform.data.remote.local.dao.BookingDao
+import com.naeemdev.multistepsflightbookingform.data.local.dao.BookingDao
 import com.naeemdev.multistepsflightbookingform.data.remote.network.PassportApiService
 import com.naeemdev.multistepsflightbookingform.data.repositories.BookingRepositoryImpl
 import com.naeemdev.multistepsflightbookingform.data.repositories.PassportFormatRepositoryImpl
@@ -21,6 +21,7 @@ object RepositoryModule {
     fun providePassportRepository(apiService: PassportApiService): PassportFormatRepository {
         return PassportFormatRepositoryImpl(apiService)
     }
+
     @Provides
     @Singleton
     fun provideBookingRepository(bookingDao: BookingDao): BookingRepository {

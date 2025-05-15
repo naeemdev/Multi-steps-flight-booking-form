@@ -1,9 +1,9 @@
 package com.naeemdev.multistepsflightbookingform.data.repositories
 
 
+import com.naeemdev.multistepsflightbookingform.data.local.dao.BookingDao
 import com.naeemdev.multistepsflightbookingform.data.mapper.BookingMapper.mapToDomain
 import com.naeemdev.multistepsflightbookingform.data.mapper.BookingMapper.mapToEntry
-import com.naeemdev.multistepsflightbookingform.data.remote.local.dao.BookingDao
 import com.naeemdev.multistepsflightbookingform.domain.ErrorType
 import com.naeemdev.multistepsflightbookingform.domain.Resource
 import com.naeemdev.multistepsflightbookingform.domain.model.SaveBookingD
@@ -18,7 +18,7 @@ class BookingRepositoryImpl @Inject constructor(
 ) : BookingRepository {
 
 
-    override suspend fun getBookingDetail() : Flow<Resource<SaveBookingD?>> {
+    override suspend fun getBookingDetail(): Flow<Resource<SaveBookingD?>> {
         return flow {
             val detail = bookingDao.getBookingById()
             if (detail != null) {

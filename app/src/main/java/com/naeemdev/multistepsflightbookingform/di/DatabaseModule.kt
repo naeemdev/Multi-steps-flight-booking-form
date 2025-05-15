@@ -2,8 +2,8 @@ package com.naeemdev.multistepsflightbookingform.di
 
 import android.content.Context
 import androidx.room.Room
-import com.naeemdev.multistepsflightbookingform.data.remote.local.AppDatabase
-import com.naeemdev.multistepsflightbookingform.data.remote.local.dao.BookingDao
+import com.naeemdev.multistepsflightbookingform.data.local.AppDatabase
+import com.naeemdev.multistepsflightbookingform.data.local.dao.BookingDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,10 +19,10 @@ object DatabaseModule {
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
         return Room.databaseBuilder(
-                context.applicationContext,
-                AppDatabase::class.java,
-                "booking_db"
-            ).fallbackToDestructiveMigration(false)
+            context.applicationContext,
+            AppDatabase::class.java,
+            "booking_db"
+        ).fallbackToDestructiveMigration(false)
             .build()
     }
 
