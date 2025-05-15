@@ -10,9 +10,13 @@ principles.
 Key Features Implemented
 
 ✅ Passenger Information
+
 ✅ Passport Information
+
 ✅ Contact Information
+
 ✅ Build Flavors
+
 ✅ Inputs validation: Full Name, Gender (dropdown), Date of Birth,Nationality,Email, Phone Number
 
 🏗️ Tech Stack
@@ -30,34 +34,34 @@ Key Features Implemented
 📂 Project Structure
 com.naeemdev.multistepsflightbookingform
 
-│
-├── data
-│ ├── mapper # Maps API models to domain models
-│ ├── remote # Network layer (Retrofit API Service)
-│ ├── local # Local storage (Room Database)
-│ ├── repositories # Repository implementations
-│ └── models # Data models
-│
-├── di
-│ ├── AppModule.kt # Provides global dependencies
-│ ├── RepositoryModule.kt # Provides repository dependencies
-│ ├── DatabaseModule.kt # Provides DatabaseModule dependencies
-│ ├── DispatchersModule.kt # Provides DispatchersModule dependencies
-│ └── AppEnvironmentModule.kt # Provides AppEnvironmentModule dependencies
-│
-├── domain
-│ ├── model # Domain models
-│ ├── repositories # Repository interfaces
-│ ├── usecases # Business logic (Use Cases)
-│ └── errors # Error handling classes
-│
-├── presentation
-│ ├── components # Reusable UI components
-│ ├── screens # Screens for Booking and Success
-│
-├── ui.theme # Theming and styling
-├── MainActivity.kt # Entry point of the app
-└── MyApp.kt # Hilt application class
+      │
+      ├── data
+      │ ├── mapper # Maps API models to domain models
+      │ ├── remote # Network layer (Retrofit API Service)
+      │ ├── local # Local storage (Room Database)
+      │ ├── repositories # Repository implementations
+      │ └── models # Data models
+      │
+      ├── di
+      │ ├── AppModule.kt # Provides global dependencies
+      │ ├── RepositoryModule.kt # Provides repository dependencies
+      │ ├── DatabaseModule.kt # Provides DatabaseModule dependencies
+      │ ├── DispatchersModule.kt # Provides DispatchersModule dependencies
+      │ └── AppEnvironmentModule.kt # Provides AppEnvironmentModule dependencies
+      │
+      ├── domain
+      │ ├── model # Domain models
+      │ ├── repositories # Repository interfaces
+      │ ├── usecases # Business logic (Use Cases)
+      │ └── errors # Error handling classes
+      │
+      ├── presentation
+      │ ├── components # Reusable UI components
+      │ ├── screens # Screens for Booking and Success
+      │
+      ├── ui.theme # Theming and styling
+      ├── MainActivity.kt # Entry point of the app
+      └── MyApp.kt # Hilt application class
 
 🔗 API Integration
 The app integrates with the GitHub REST API to fetch data:
@@ -114,23 +118,28 @@ Error Handling
 *     Displays appropriate error messages for network issues, API failures, and empty data.
 
 🚀 How to Run the App
+
 1️⃣ Download the code
+
 2️⃣ Open in Android Studio : Sync Gradle and install dependencies
 Open the project in  **Android Studio Meerkat Feature Drop | 2024.3.2** or newer.
 Ensure you have an Android Emulator or a Physical Device connected.
+
 3️⃣ Run the App
-`./gradlew build && ./gradlew installDebug`
+
+    ./gradlew build && ./gradlew installDebug
 
 Or, simply press Run ▶️ in Android Studio.
 
-🎯
+
 🧪 Unit Testing
+
 The app includes unit tests for:
 
-*     Use cases
-*     Repository layer
-*     Mappers
-*     view model
+Use cases
+Repository layer
+Mappers
+view model
 
 Testing Tools:
 
@@ -139,4 +148,5 @@ JUnit for testing.
 Mockk for mocking dependencies.
 
 To run the tests, use the following command:
-./gradlew test
+
+    ./gradlew test
