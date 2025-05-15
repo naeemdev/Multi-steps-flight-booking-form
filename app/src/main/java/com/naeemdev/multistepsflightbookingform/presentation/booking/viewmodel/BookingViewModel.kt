@@ -253,15 +253,8 @@ class BookingViewModel @Inject constructor(
             it.copy(
                 isLoading = false,
                 serverErrorMessage = null,
-                canProceed = false,
-                passengerError = null,
-                passportError = null,
-                contactError = null,
                 passportExpiryDateSelected = false,
                 dateSelected = false,
-                nationalityError = null,
-                emailError = null,
-                phoneError = null,
                 passenger = it.passenger.copy(
                     name = "",
                     dob = System.currentTimeMillis(),
