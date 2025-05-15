@@ -63,55 +63,56 @@ com.naeemdev.multistepsflightbookingform
       ├── MainActivity.kt # Entry point of the app
       └── MyApp.kt # Hilt application class
 
-🔗 API Integration
-The app integrates with the GitHub REST API to fetch data:
 
-Base URL: https://6790d6e6af8442fd7377f52d.mockapi.io/passportFormats.
+
 
 📱 User Interface
 
 Passenger Information
-The first step of the flight booking form asks for the passenger's personal information:
-
-Full Name: A text input for the user's full name.
-
-Gender: A dropdown for selecting the gender.
-
-Date of Birth: A date picker for selecting the user's birthdate.
-
-Nationality: A dropdown for selecting the user's nationality.
-(Note: now just showing the list of nationalities in dropdown but we can enhance to get list our
-countries from API)
+    The first step of the flight booking form asks for the passenger's personal information:
+    
+    Full Name: A text input for the user's full name.
+    
+    Gender: A dropdown for selecting the gender.
+    
+    Date of Birth: A date picker for selecting the user's birthdate.
+    
+    Nationality: A dropdown for selecting the user's nationality.
+    
+        (Note: now just showing the list of nationalities in dropdown but we can enhance to get list our
+        countries from API)
+        
+      Base URL: https://6790d6e6af8442fd7377f52d.mockapi.io/passportFormats.
 
 Passport Information
-The second step asks for the user's passport information:
-
-Passport Number: A text input for the passport number.
-
-Username: A text input for the username associated with the passport.
-
-Passport Expiry Date: A date picker for selecting the passport expiry date.
+    The second step asks for the user's passport information:
+    
+    Passport Number: A text input for the passport number.
+    
+    Username: A text input for the username associated with the passport.
+    
+    Passport Expiry Date: A date picker for selecting the passport expiry date.
 
 Contact Information
-The final step requires the user to provide contact information:
-
-Email: A text input for the user's email address.
-
-Phone Number: A text input for the user's phone number
+    The final step requires the user to provide contact information:
+    
+    Email: A text input for the user's email address.
+    
+    Phone Number: A text input for the user's phone number
 
 Validation
 
-Full Name: Ensures that the user provides a valid name.
-
-Gender: Checks if the gender is selected.
-
-Date of Birth: Ensures the date of birth is in a valid format.
-
-Nationality: Verifies that the nationality is selected.
-
-Email: Ensures that the email address follows a valid format.
-
-Phone Number: Verifies that the phone number is in a valid format.
+    Full Name: Ensures that the user provides a valid name.
+    
+    Gender: Checks if the gender is selected.
+    
+    Date of Birth: Ensures the date of birth is in a valid format.
+    
+    Nationality: Verifies that the nationality is selected.
+    
+    Email: Ensures that the email address follows a valid format.
+    
+    Phone Number: Verifies that the phone number is in a valid format.
 
 Error Handling
 
