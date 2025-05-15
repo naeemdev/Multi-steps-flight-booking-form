@@ -27,6 +27,8 @@ navigationCompose = "2.9.0"
 roomRuntime = "2.7.1"
 roomCompiler = "2.7.1"
 roomKtx = "2.7.1"
+libphonenumber = "8.13.33"
+kotlinx-collections-immutable = "0.3.7"
 
 [libraries]
 androidx-core = { module = "androidx.test:core", version.ref = "core" }
@@ -65,7 +67,8 @@ androidx-navigation-compose = { group = "androidx.navigation", name = "navigatio
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
-
+kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinx-collections-immutable" }
+libphonenumber = { module = "com.googlecode.libphonenumber:libphonenumber", version.ref = "libphonenumber" }
 
 
 [plugins]

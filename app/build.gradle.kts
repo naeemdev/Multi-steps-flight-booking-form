@@ -104,4 +104,6 @@ dependencies {
     testImplementation(libs.kotlin.test.junit)
     testImplementation(libs.kotlinx.coroutines.test.v164)
     testImplementation(libs.turbine)
+    implementation(libs.kotlinx.collections.immutable)
+    implementation(libs.libphonenumber)
 }
