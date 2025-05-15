@@ -78,20 +78,19 @@ Passenger Information
     Date of Birth: A date picker for selecting the user's birthdate.
     
     Nationality: A dropdown for selecting the user's nationality.
+     Base URL: https://6790d6e6af8442fd7377f52d.mockapi.io/passportFormats.
     
         (Note: now just showing the list of nationalities in dropdown but we can enhance to get list our
         countries from API)
         
-      Base URL: https://6790d6e6af8442fd7377f52d.mockapi.io/passportFormats.
+     
 
 Passport Information
     The second step asks for the user's passport information:
     
     Passport Number: A text input for the passport number.
     
-    Username: A text input for the username associated with the passport.
-    
-    Passport Expiry Date: A date picker for selecting the passport expiry date.
+     Passport Expiry Date: A date picker for selecting the passport expiry date.
 
 Contact Information
     The final step requires the user to provide contact information:
