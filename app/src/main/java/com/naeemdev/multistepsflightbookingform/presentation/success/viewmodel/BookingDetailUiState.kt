@@ -6,6 +6,7 @@ data class BookingDetailUiState(
     val nationality: String = "",
     val gender: String = "",
     val passportNumber: String = "",
+    val passportExpiryDate: String = "",
     val email: String = "",
     val phone: String = "",
     val isLoading: Boolean = false,

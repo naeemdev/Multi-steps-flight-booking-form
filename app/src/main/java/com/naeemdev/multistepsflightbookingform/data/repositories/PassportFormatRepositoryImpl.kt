@@ -14,19 +14,17 @@ class PassportFormatRepositoryImpl @Inject constructor(
 ) : PassportFormatRepository {
 
     override suspend fun getPassportFormatList(): Flow<Resource<List<PassportFormatD>>> {
-      return  safeApiCall(
-          apiCall = {
-              val response = apiService.getPassportFormatsList()
-              response
+        return safeApiCall(
+            apiCall = {
+                val response = apiService.getPassportFormatsList()
+                response
 
-          },
-          response = { apiResponse ->
-              apiResponse.body()?.let {
-                  PassportFormatMapper.mapToDomainList(it)
-              } ?: emptyList()
-          }
-      )
-
+            },
+            response = { apiResponse ->
+                apiResponse.body()?.let {
+                    PassportFormatMapper.mapToDomainList(it)
+                } ?: emptyList()
+            }
+        )
     }
-
 }

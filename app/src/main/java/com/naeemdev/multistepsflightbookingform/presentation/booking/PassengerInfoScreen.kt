@@ -55,7 +55,6 @@ fun PassengerInfoScreen(
     viewModel: BookingViewModel,
     onNextClicked: () -> Unit,
 ) {
-    val context: Context = LocalContext.current
     val uiState = viewModel.uiState.collectAsStateWithLifecycle()
     var errorMessage by remember { mutableIntStateOf(0) }
     ObserveAsEvents(viewModel.events) { event ->
@@ -179,7 +178,7 @@ fun PassengerInfoContent(
                 text = if (state.dateSelected) {
                     state.passenger.dob.toFormattedDate()
                 } else {
-                    "Select your DOB"
+                    stringResource(R.string.select_your_dob)
                 },
                 textAlign = TextAlign.Start,
                 style = MaterialTheme.typography.titleMedium,
@@ -187,13 +186,15 @@ fun PassengerInfoContent(
         }
         ConfigurableItemPicker(
             modifier = Modifier.padding(vertical = 8.dp),
-            items = listOf("Male", "Female", "Other"),
+            items = listOf(stringResource(R.string.male), stringResource(R.string.female),
+                stringResource(R.string.other)
+            ),
             selectedItem = state.passenger.gender,
             onItemSelected = {
                 onUiEvent(BookingAction.OnGenderSelection(it))
             },
             itemToString = { genderString -> genderString },
-            label = "Select Your Gender",
+            label = stringResource(R.string.select_your_gender),
             textFieldShape = RoundedCornerShape(8.dp)
         )
         ConfigurableItemPicker(
@@ -204,7 +205,7 @@ fun PassengerInfoContent(
                 onUiEvent(BookingAction.OnNationality(it))
             },
             itemToString = { passport -> passport.nationality },
-            label = "Select Your Nationality",
+            label = stringResource(R.string.select_your_nationality),
             textFieldShape = RoundedCornerShape(8.dp)
         )
 

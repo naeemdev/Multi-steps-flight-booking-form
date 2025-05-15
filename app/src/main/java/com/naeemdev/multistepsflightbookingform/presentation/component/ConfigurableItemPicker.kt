@@ -1,4 +1,5 @@
 package com.naeemdev.multistepsflightbookingform.presentation.component
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -27,10 +28,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.naeemdev.multistepsflightbookingform.R
 import com.naeemdev.multistepsflightbookingform.domain.model.PassportFormatD
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -41,7 +44,7 @@ fun <T> ConfigurableItemPicker(
     selectedItem: T?,
     onItemSelected: (T) -> Unit,
     itemToString: (T) -> String,
-    label: String = "Select Item",
+    label: String = stringResource(R.string.select_item),
     labelStyle: TextStyle = MaterialTheme.typography.bodySmall,
     labelColor: Color = MaterialTheme.colorScheme.onSurfaceVariant,
     enabled: Boolean = true,
@@ -86,7 +89,12 @@ fun <T> ConfigurableItemPicker(
         ) {
             items.forEach { item ->
                 DropdownMenuItem(
-                    text = { Text(itemToString(item), color = dropdownMenuItemTextColor) },
+                    text = {
+                        Text(
+                            itemToString(item),
+                            color = dropdownMenuItemTextColor
+                        )
+                    },
                     onClick = {
                         onItemSelected(item)
                         expanded = false
@@ -96,7 +104,12 @@ fun <T> ConfigurableItemPicker(
             }
             if (items.isEmpty()) {
                 DropdownMenuItem(
-                    text = { Text("No options available", color = dropdownMenuItemTextColor.copy(alpha = 0.6f)) },
+                    text = {
+                        Text(
+                            stringResource(R.string.no_options_available),
+                            color = dropdownMenuItemTextColor.copy(alpha = 0.6f)
+                        )
+                    },
                     onClick = { expanded = false },
                     enabled = false
                 )
@@ -104,7 +117,6 @@ fun <T> ConfigurableItemPicker(
         }
     }
 }
-
 
 
 @Preview(showBackground = true, widthDp = 360)

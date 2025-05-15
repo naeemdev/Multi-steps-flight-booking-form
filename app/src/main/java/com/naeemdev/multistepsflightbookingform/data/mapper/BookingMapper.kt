@@ -17,6 +17,7 @@ object BookingMapper {
             passportNumber = passportNumber,
             email = email,
             phone = phone,
+            passportExpiryDate = passportExpiryDate,
         )
     }
 
@@ -29,8 +30,7 @@ object BookingMapper {
             passportNumber = passportNumber,
             email = email,
             phone = phone,
+            passportExpiryDate = passportExpiryDate,
         )
     }
-
-
 }

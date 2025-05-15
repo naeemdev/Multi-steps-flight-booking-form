@@ -1,6 +1,5 @@
 package com.naeemdev.multistepsflightbookingform.presentation.booking
 
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -57,8 +56,6 @@ fun PassengerContactScreen(
 
             is BookingEvent.Success -> {
                 errorMessage = 0
-                Log.d("bookingId", "${uiState.value.bookingId}")
-
                 onNextClicked(uiState.value.bookingId)
             }
 
@@ -79,8 +76,10 @@ fun PassengerContactScreen(
                 },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 20.dp,
-                        horizontal = 16.dp),
+                    .padding(
+                        vertical = 20.dp,
+                        horizontal = 16.dp
+                    ),
                 shape = RoundedCornerShape(12.dp),
             ) {
                 Text(
@@ -150,7 +149,7 @@ fun PassengerContactContent(
             },
             placeholder = {
                 Text(
-                    text = "e.g john@gmail.com",
+                    text = stringResource(R.string.e_g_john_gmail_com),
                     color = Color.Gray
                 )
             },
@@ -175,7 +174,7 @@ fun PassengerContactContent(
             },
             placeholder = {
                 Text(
-                    text = "e.g +923138788880",
+                    text = stringResource(R.string.e_g_923138788880),
                     color = Color.Gray
                 )
             },

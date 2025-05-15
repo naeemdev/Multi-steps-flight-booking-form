@@ -2,6 +2,7 @@ package com.naeemdev.multistepsflightbookingform.presentation.booking.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.naeemdev.multistepsflightbookingform.dispatcher.DispatchersProvider
 import com.naeemdev.multistepsflightbookingform.domain.ValidationResult
 import com.naeemdev.multistepsflightbookingform.domain.usecase.DeleteBookingUseCase
 import com.naeemdev.multistepsflightbookingform.domain.usecase.GetPassportFormatListUseCase
@@ -14,7 +15,6 @@ import com.naeemdev.multistepsflightbookingform.presentation.booking.state.Booki
 import com.naeemdev.multistepsflightbookingform.presentation.booking.state.toSaveBookingRequest
 import com.naeemdev.multistepsflightbookingform.util.collectResource
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -25,11 +25,10 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import javax.inject.Named
 
 @HiltViewModel
 class BookingViewModel @Inject constructor(
-    @Named("isInternational") private val isInternational: Boolean,
+    val dispatchersProvider: DispatchersProvider,
     private val getPassportFormatListUseCase: GetPassportFormatListUseCase,
     private val validationUseCases: ValidationUseCases,
     private val saveBookingUseCase: SaveBookingUseCase,
@@ -40,18 +39,15 @@ class BookingViewModel @Inject constructor(
 
     val uiState = _uiState
         .onStart { fetchPassportFormatList() }
-        .flowOn(Dispatchers.IO)
+        .flowOn(dispatchersProvider.io)
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(10_000L), BookingUiState())
 
     private val eventChannel = Channel<BookingEvent>()
     val events = eventChannel.receiveAsFlow()
 
-    init {
-        _uiState.update { it.copy(isInternational = isInternational) }
-    }
 
     fun fetchPassportFormatList() {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(dispatchersProvider.io) {
             getPassportFormatListUseCase.invoke()
                 .collectResource(
                     onLoading = { _uiState.update { it.copy(isLoading = true) } },
@@ -222,7 +218,7 @@ class BookingViewModel @Inject constructor(
             },
             onError = { errorMessageId -> sendError(errorMessageId) },
             onSuccess = {
-                viewModelScope.launch(Dispatchers.IO) {
+                viewModelScope.launch(dispatchersProvider.io) {
                     deleteBookingUseCase()
                     saveBookingUseCase(
                         uiState.value.toSaveBookingRequest()
@@ -286,6 +282,3 @@ class BookingViewModel @Inject constructor(
         }
     }
 }
-
-
-

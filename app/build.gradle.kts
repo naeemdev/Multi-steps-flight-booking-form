@@ -1,5 +1,3 @@
-import org.codehaus.groovy.runtime.ArrayTypeUtils.dimension
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -106,4 +104,6 @@ dependencies {
     testImplementation(libs.turbine)
     implementation(libs.kotlinx.collections.immutable)
     implementation(libs.libphonenumber)
+    testImplementation(libs.androidx.core.testing)
+    testImplementation(libs.robolectric)
 }

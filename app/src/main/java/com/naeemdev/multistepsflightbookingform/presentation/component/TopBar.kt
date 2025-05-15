@@ -45,7 +45,7 @@ fun TopBar(
                     Icon(
                         modifier = Modifier.size(30.dp),
                         painter = painterResource(R.drawable.outline_arrow_back_24),
-                        contentDescription = "Menu"
+                        contentDescription = "back"
                     )
                 }
             }

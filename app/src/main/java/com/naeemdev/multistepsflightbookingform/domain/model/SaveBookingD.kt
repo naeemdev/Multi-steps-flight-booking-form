@@ -7,6 +7,7 @@ data class SaveBookingD(
     val nationality: String,
     val gender: String,
     val passportNumber: String?,
+    val passportExpiryDate: String?,
     val email: String,
     val phone: String
 )

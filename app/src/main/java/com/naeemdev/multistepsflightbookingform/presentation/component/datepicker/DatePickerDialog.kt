@@ -25,10 +25,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import com.naeemdev.multistepsflightbookingform.R
 import com.naeemdev.multistepsflightbookingform.extension.toFormattedDate
 import com.naeemdev.multistepsflightbookingform.ui.theme.MultiStepsFlightBookingFormTheme
 
@@ -39,7 +41,7 @@ fun DatePickerDialog(
     modifier: Modifier,
     selectedDate: Long,
     onDateSelected: (Long) -> Unit,
-    title: String = "Select date",
+    title: String = stringResource(R.string.select_date),
     initialDisplayMode: DisplayMode = DisplayMode.Picker,
     dateSelectionMode: DatePickerSelectionMode = DatePickerSelectionMode.PAST_ONLY,
     onCancel: () -> Unit
@@ -112,7 +114,7 @@ fun DatePickerDialog(
                     horizontalArrangement = Arrangement.End
                 ) {
                     TextButton(onClick = onCancel) {
-                        Text(text = "Cancel")
+                        Text(text = stringResource(R.string.cancel))
                     }
                     Spacer(modifier = Modifier.width(8.dp))
                     TextButton(onClick = {
@@ -121,7 +123,7 @@ fun DatePickerDialog(
                         }
                         onCancel()
                     }) {
-                        Text(text = "Ok")
+                        Text(text = stringResource(R.string.ok))
                     }
 
                 }

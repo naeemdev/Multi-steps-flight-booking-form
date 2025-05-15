@@ -41,6 +41,7 @@ class SavedBookingViewModel @Inject constructor(
                                 gender = data?.gender ?: "",
                                 email = data?.email ?: "",
                                 passportNumber = data?.passportNumber.toString(),
+                                passportExpiryDate = data?.passportExpiryDate.toString(),
                             )
                         }
 

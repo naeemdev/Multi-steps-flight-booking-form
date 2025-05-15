@@ -108,7 +108,7 @@ fun BookingSuccessContent(
             phoneNumber = uiState.phone,
             email = uiState.email,
             passportNumber = uiState.passportNumber,
-            passportExpiry = uiState.passportNumber
+            passportExpiry = uiState.passportExpiryDate
         )
     }
 }
@@ -295,8 +295,8 @@ fun DottedLineDivider() {
             .height(1.dp)
     ) {
         val canvasWidth = size.width
-        val dotRadius = 2.dp.toPx() // Convert dp to px
-        val spaceBetweenDots = 4.dp.toPx() // Convert dp to px
+        val dotRadius = 2.dp.toPx()
+        val spaceBetweenDots = 4.dp.toPx()
         var currentX = 0f
 
         while (currentX < canvasWidth) {

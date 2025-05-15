@@ -8,7 +8,6 @@ import com.naeemdev.multistepsflightbookingform.extension.toFormattedDate
 data class BookingUiState(
     val passportFormatsList: List<PassportFormatD> = emptyList(),
     val isLoading: Boolean = false,
-    val isInternational: Boolean = false,
     val serverErrorMessage: Int? = null,
     val canProceed: Boolean = false,
     val passengerError: Int? = null,
@@ -24,6 +23,7 @@ data class BookingUiState(
     val contact: ContactState = ContactState(),
     val passport: PassportState = PassportState(),
 )
+
 fun BookingUiState.toSaveBookingRequest(): SaveBookingRequest {
     return SaveBookingRequest(
         name = passenger.name,
@@ -33,5 +33,6 @@ fun BookingUiState.toSaveBookingRequest(): SaveBookingRequest {
         passportNumber = passport.passportNumber,
         email = contact.email,
         phone = contact.phone,
+        passportExpiryDate = passport.expiryDate.toFormattedDate(),
     )
 }

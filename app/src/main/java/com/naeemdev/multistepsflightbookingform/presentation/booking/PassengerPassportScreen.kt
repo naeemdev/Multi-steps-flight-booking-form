@@ -163,7 +163,7 @@ fun PassengerPassportContent(
                 text = if (state.passportExpiryDateSelected) {
                     state.passport.expiryDate.toFormattedDate()
                 } else {
-                    "Select passport expiry date"
+                    stringResource(R.string.select_passport_expiry_date)
                 },
                 textAlign = TextAlign.Start,
                 style = MaterialTheme.typography.titleMedium,
