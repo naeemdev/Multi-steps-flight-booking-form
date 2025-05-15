@@ -1,4 +1,4 @@
-package com.naeemdev.multistepsflightbookingform.data.local.entity
+package com.naeemdev.multistepsflightbookingform.data.source.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -3,7 +3,7 @@ package com.naeemdev.multistepsflightbookingform.di
 import android.app.Application
 import android.content.Context
 import com.naeemdev.multistepsflightbookingform.BuildConfig
-import com.naeemdev.multistepsflightbookingform.data.remote.network.PassportApiService
+import com.naeemdev.multistepsflightbookingform.data.source.remote.network.PassportApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

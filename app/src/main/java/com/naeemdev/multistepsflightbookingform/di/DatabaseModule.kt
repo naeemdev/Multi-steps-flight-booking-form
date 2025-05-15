@@ -2,8 +2,8 @@ package com.naeemdev.multistepsflightbookingform.di
 
 import android.content.Context
 import androidx.room.Room
-import com.naeemdev.multistepsflightbookingform.data.local.AppDatabase
-import com.naeemdev.multistepsflightbookingform.data.local.dao.BookingDao
+import com.naeemdev.multistepsflightbookingform.data.source.local.AppDatabase
+import com.naeemdev.multistepsflightbookingform.data.source.local.dao.BookingDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

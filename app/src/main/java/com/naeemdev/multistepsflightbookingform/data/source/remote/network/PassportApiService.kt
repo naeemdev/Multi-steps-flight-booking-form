@@ -1,6 +1,6 @@
-package com.naeemdev.multistepsflightbookingform.data.remote.network
+package com.naeemdev.multistepsflightbookingform.data.source.remote.network
 
-import com.naeemdev.multistepsflightbookingform.data.remote.response.PassportFormatResponse
+import com.naeemdev.multistepsflightbookingform.data.source.remote.response.PassportFormatResponse
 import retrofit2.Response
 import retrofit2.http.GET
 

@@ -1,9 +1,9 @@
 package com.naeemdev.multistepsflightbookingform.data
 
-import com.naeemdev.multistepsflightbookingform.data.local.dao.BookingDao
-import com.naeemdev.multistepsflightbookingform.data.local.entity.BookingEntity
 import com.naeemdev.multistepsflightbookingform.data.mapper.BookingMapper.mapToEntry
 import com.naeemdev.multistepsflightbookingform.data.repositories.BookingRepositoryImpl
+import com.naeemdev.multistepsflightbookingform.data.source.local.dao.BookingDao
+import com.naeemdev.multistepsflightbookingform.data.source.local.entity.BookingEntity
 import com.naeemdev.multistepsflightbookingform.domain.ErrorType
 import com.naeemdev.multistepsflightbookingform.domain.Resource
 import com.naeemdev.multistepsflightbookingform.domain.model.resquest.SaveBookingRequest

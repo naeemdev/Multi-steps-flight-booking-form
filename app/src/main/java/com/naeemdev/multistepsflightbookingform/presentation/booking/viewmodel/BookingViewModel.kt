@@ -46,7 +46,7 @@ class BookingViewModel @Inject constructor(
     val events = eventChannel.receiveAsFlow()
 
 
-    fun fetchPassportFormatList() {
+    private fun fetchPassportFormatList() {
         viewModelScope.launch(dispatchersProvider.io) {
             getPassportFormatListUseCase.invoke()
                 .collectResource(

@@ -2,7 +2,7 @@ package com.naeemdev.multistepsflightbookingform.data.repositories
 
 
 import com.naeemdev.multistepsflightbookingform.data.mapper.PassportFormatMapper
-import com.naeemdev.multistepsflightbookingform.data.remote.network.PassportApiService
+import com.naeemdev.multistepsflightbookingform.data.source.remote.network.PassportApiService
 import com.naeemdev.multistepsflightbookingform.domain.Resource
 import com.naeemdev.multistepsflightbookingform.domain.model.PassportFormatD
 import com.naeemdev.multistepsflightbookingform.domain.repositories.PassportFormatRepository

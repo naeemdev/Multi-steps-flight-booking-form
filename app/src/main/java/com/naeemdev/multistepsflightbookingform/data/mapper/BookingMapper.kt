@@ -1,7 +1,7 @@
 package com.naeemdev.multistepsflightbookingform.data.mapper
 
 
-import com.naeemdev.multistepsflightbookingform.data.local.entity.BookingEntity
+import com.naeemdev.multistepsflightbookingform.data.source.local.entity.BookingEntity
 import com.naeemdev.multistepsflightbookingform.domain.model.SaveBookingD
 import com.naeemdev.multistepsflightbookingform.domain.model.resquest.SaveBookingRequest
 

@@ -1,7 +1,7 @@
 package com.naeemdev.multistepsflightbookingform.data.mapper
 
 import com.naeemdev.multistepsflightbookingform.data.mapper.PassportFormatMapper.mapToDomain
-import com.naeemdev.multistepsflightbookingform.data.remote.response.PassportFormatResponse
+import com.naeemdev.multistepsflightbookingform.data.source.remote.response.PassportFormatResponse
 import org.junit.Assert.assertTrue
 import kotlin.test.Test
 import kotlin.test.assertEquals

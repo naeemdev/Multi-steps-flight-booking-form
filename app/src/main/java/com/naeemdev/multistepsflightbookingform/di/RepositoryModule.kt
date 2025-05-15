@@ -1,9 +1,9 @@
 package com.naeemdev.multistepsflightbookingform.di
 
-import com.naeemdev.multistepsflightbookingform.data.local.dao.BookingDao
-import com.naeemdev.multistepsflightbookingform.data.remote.network.PassportApiService
 import com.naeemdev.multistepsflightbookingform.data.repositories.BookingRepositoryImpl
 import com.naeemdev.multistepsflightbookingform.data.repositories.PassportFormatRepositoryImpl
+import com.naeemdev.multistepsflightbookingform.data.source.local.dao.BookingDao
+import com.naeemdev.multistepsflightbookingform.data.source.remote.network.PassportApiService
 import com.naeemdev.multistepsflightbookingform.domain.repositories.BookingRepository
 import com.naeemdev.multistepsflightbookingform.domain.repositories.PassportFormatRepository
 import dagger.Module

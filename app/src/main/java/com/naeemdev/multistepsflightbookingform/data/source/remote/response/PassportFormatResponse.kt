@@ -1,4 +1,4 @@
-package com.naeemdev.multistepsflightbookingform.data.remote.response
+package com.naeemdev.multistepsflightbookingform.data.source.remote.response
 
 import kotlinx.serialization.Serializable
 

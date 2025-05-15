@@ -1,9 +1,9 @@
-package com.naeemdev.multistepsflightbookingform.data.local
+package com.naeemdev.multistepsflightbookingform.data.source.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.naeemdev.multistepsflightbookingform.data.local.dao.BookingDao
-import com.naeemdev.multistepsflightbookingform.data.local.entity.BookingEntity
+import com.naeemdev.multistepsflightbookingform.data.source.local.dao.BookingDao
+import com.naeemdev.multistepsflightbookingform.data.source.local.entity.BookingEntity
 
 
 @Database(
