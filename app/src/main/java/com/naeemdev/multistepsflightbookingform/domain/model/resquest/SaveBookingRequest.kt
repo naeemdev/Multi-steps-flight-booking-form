@@ -1,0 +1,11 @@
+package com.naeemdev.multistepsflightbookingform.domain.model.resquest
+
+data class SaveBookingRequest(
+    val name: String,
+    val dob: String,
+    val nationality: String,
+    val gender: String,
+    val passportNumber: String?,
+    val email: String,
+    val phone: String
+)
