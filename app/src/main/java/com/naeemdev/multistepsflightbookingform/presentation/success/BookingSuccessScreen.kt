@@ -1,6 +1,5 @@
 package com.naeemdev.multistepsflightbookingform.presentation.success
 
-import android.util.Log
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
@@ -77,7 +76,6 @@ fun BookingSuccessContent(
     modifier: Modifier,
     uiState: BookingDetailUiState
 ) {
-    Log.d("testingDetail", "BookingSuccessContent: ${uiState.name}")
     Column(
         modifier = modifier
             .fillMaxSize()
