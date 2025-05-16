@@ -1,6 +1,5 @@
 package com.naeemdev.multistepsflightbookingform.presentation.booking
 
-import android.content.Context
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -29,22 +28,23 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.White
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.naeemdev.multistepsflightbookingform.presentation.booking.viewmodel.BookingViewModel
 import com.naeemdev.multistepsflightbookingform.R
 import com.naeemdev.multistepsflightbookingform.extension.toFormattedDate
 import com.naeemdev.multistepsflightbookingform.presentation.booking.state.BookingUiState
+import com.naeemdev.multistepsflightbookingform.presentation.booking.viewmodel.BookingViewModel
 import com.naeemdev.multistepsflightbookingform.presentation.component.ActionButtonWithIcon
 import com.naeemdev.multistepsflightbookingform.presentation.component.ConfigurableItemPicker
-import com.naeemdev.multistepsflightbookingform.presentation.component.datepicker.DatePickerDialog
-import com.naeemdev.multistepsflightbookingform.presentation.component.ErrorDialog
 import com.naeemdev.multistepsflightbookingform.presentation.component.LoadingView
 import com.naeemdev.multistepsflightbookingform.presentation.component.TopBar
+import com.naeemdev.multistepsflightbookingform.presentation.component.datepicker.DatePickerDialog
+import com.naeemdev.multistepsflightbookingform.presentation.component.dialog.DialogButtonAction
+import com.naeemdev.multistepsflightbookingform.presentation.component.dialog.DialogButtonType
+import com.naeemdev.multistepsflightbookingform.presentation.component.dialog.ErrorDialog
 import com.naeemdev.multistepsflightbookingform.ui.theme.MultiStepsFlightBookingFormTheme
 import com.naeemdev.multistepsflightbookingform.ui.theme.RedErrorLight
 import com.naeemdev.multistepsflightbookingform.util.NAME_MIN_LENGTH
@@ -97,12 +97,16 @@ fun PassengerInfoScreen(
     uiState.value.serverErrorMessage?.let {
         ErrorDialog(
             description = stringResource(it),
-            buttonText = stringResource(R.string.dismiss_button),
-            onClickButton = {
-                viewModel.dismissDialog()
-            }
+            buttons = listOf(
+                DialogButtonAction(
+                    text = stringResource(R.string.retry),
+                    type = DialogButtonType.PRIMARY,
+                    onClick = {
+                        viewModel.onAction(BookingAction.GetPassportFormatList)
+                    }
+                )
+            )
         )
-
     }
 }
 
@@ -186,7 +190,8 @@ fun PassengerInfoContent(
         }
         ConfigurableItemPicker(
             modifier = Modifier.padding(vertical = 8.dp),
-            items = listOf(stringResource(R.string.male), stringResource(R.string.female),
+            items = listOf(
+                stringResource(R.string.male), stringResource(R.string.female),
                 stringResource(R.string.other)
             ),
             selectedItem = state.passenger.gender,

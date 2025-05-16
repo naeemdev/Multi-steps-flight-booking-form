@@ -4,7 +4,7 @@
     <string name="error_unauthorized">Unauthorized: Please check your authentication credentials.</string>
     <string name="error_internal_server">Internal Server Error: Something went wrong on the server side.</string>
     <string name="error_unknown">Unknown Error: Please try again later.</string>
-    <string name="error_no_internet">No Internet: Please check your network connection.</string>
+    <string name="error_no_internet">No Internet please check your network connection.</string>
     <string name="invalid_email_address">Invalid Email Address!</string>
     <string name="can_t_be_empty">Can\'t be empty!</string>
     <string name="should_not_contain_any_special_characters">Should not contain any special characters</string>
@@ -21,7 +21,6 @@
     <string name="e_g_johan_devoid">e.g Johan Devoid</string>
     <string name="error_name_empty">Full name can\'t be empty</string>
     <string name="api_response_null">APi response is null</string>
-    <string name="error_io_exception">IO error exception</string>
     <string name="error_nationality_empty">nationality can\'t be empty</string>
     <string name="please_select_gender">Please select gender</string>
     <string name="enter_passport_details">Enter passport detail</string>
@@ -62,4 +61,6 @@
     <string name="ok">Ok</string>
     <string name="select_item">Select Item</string>
     <string name="no_options_available">No options available</string>
+    <string name="close">close</string>
+    <string name="retry">Retry</string>
 </resources>

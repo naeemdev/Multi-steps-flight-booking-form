@@ -9,6 +9,6 @@ enum class ErrorType(val errorMessageResId: Int) {
     UNKNOWN(R.string.error_unknown),
     API_RESPONSE_NULL(R.string.api_response_null),
     INTERNAL_SERVER_ERROR(R.string.error_internal_server),
-    IO_EXCEPTION(R.string.error_io_exception),
+    IO_EXCEPTION(R.string.error_no_internet),
     BOOKING_NOT_FOUND(R.string.booking_not_found),
 }

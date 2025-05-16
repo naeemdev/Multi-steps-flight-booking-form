@@ -84,6 +84,10 @@ class BookingViewModel @Inject constructor(
             is BookingAction.OnStepOne -> handleStepOneValidation()
             is BookingAction.OnStepTwo -> handleStepTwoValidation()
             is BookingAction.OnSubmit -> handleSubmitValidation()
+            is BookingAction.GetPassportFormatList -> {
+                dismissDialog()
+                fetchPassportFormatList()
+            }
         }
     }
 
@@ -244,7 +248,7 @@ class BookingViewModel @Inject constructor(
         }
     }
 
-    fun dismissDialog() {
+    private fun dismissDialog() {
         _uiState.update { it.copy(serverErrorMessage = null) }
     }
 
